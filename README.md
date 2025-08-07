@@ -1,44 +1,46 @@
 # Folder Tree Colors
 
-Una extensión de VS Code que añade colores visuales a los niveles de carpetas en el explorador, similar al efecto de Indent Rainbow pero aplicado al árbol de archivos.
+A VS Code extension that adds visual colors to folder levels in the explorer, similar to the Indent Rainbow effect but applied to the file tree.
 
-## Características
+## Features
 
-- 🌈 **Múltiples esquemas de colores**: Rainbow, tonos azules, tonos cálidos, tonos fríos y monocromático
-- 🎨 **Personalización completa**: Ajusta opacidad, grosor de bordes y esquemas de colores
-- ⚡ **Activación instantánea**: Se activa automáticamente al abrir VS Code
-- 🔧 **Comandos fáciles**: Toggle y refresh mediante comandos de paleta
+- 🌈 **Multiple color schemes**: Rainbow, blue tones, warm tones, cool tones, and monochrome
+- 🎨 **Full customization**: Adjust opacity, border thickness, and color schemes
+- ⚡ **Instant activation**: Automatically activates when VS Code opens
+- 🔧 **Easy commands**: Toggle and refresh using palette commands
 
-## Instalación
+## Installation
 
-### Desde el código fuente
+### From source code
 
-1. Clona o descarga este repositorio
-2. Abre una terminal en el directorio del proyecto
-3. Ejecuta los siguientes comandos:
+1. Clone or download this repository
+2. Open a terminal in the project directory
+3. Run the following commands:
 
 ```bash
 npm install
 npm run compile
 ```
 
-4. Presiona `F5` para abrir una nueva ventana de VS Code con la extensión cargada
-5. O empaqueta la extensión:
+4. Press `F5` to open a new VS Code window with the extension loaded
+5. Or package the extension:
 
 ```bash
 npm install -g vsce
 vsce package
 ```
 
-Luego instala el archivo `.vsix` generado usando `Extensions: Install from VSIX...`
-## Uso
+Then install the generated `.vsix` file using `Extensions: Install from VSIX...`
 
-### Comandos disponibles
+## Usage
 
-Abre la paleta de comandos (`Ctrl+Shift+P` / `Cmd+Shift+P`) y busca:
-### Configuración
+### Available commands
 
-Ve a `File > Preferences > Settings` y busca "Folder Tree Colors" o edita tu `settings.json`:
+Open the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and search for:
+
+### Configuration
+
+Go to `File > Preferences > Settings` and search for "Folder Tree Colors" or edit your `settings.json`:
 
 ```json
 {
@@ -49,83 +51,83 @@ Ve a `File > Preferences > Settings` y busca "Folder Tree Colors" o edita tu `se
 }
 ```
 
-#### Opciones de configuración
+#### Configuration options
 
 - **`folderTreeColors.enabled`** (boolean, default: `true`)
-  - Habilita o deshabilita la extensión
+  - Enables or disables the extension
 
 - **`folderTreeColors.opacity`** (number, default: `0.1`)
-  - Controla la opacidad de los colores de fondo (0.05 - 0.5)
+  - Controls the background color opacity (0.05 - 0.5)
 
 - **`folderTreeColors.borderWidth`** (number, default: `1`)
-  - Grosor del borde izquierdo en píxeles (0 - 5)
+  - Left border thickness in pixels (0 - 5)
 
 - **`folderTreeColors.colorScheme`** (string, default: `"rainbow"`)
-  - Esquema de colores a usar:
-    - `"rainbow"` - Colores del arcoíris variados
-    - `"blue-tones"` - Diferentes tonos de azul
-    - `"warm-tones"` - Tonos cálidos (naranjas, amarillos)
-    - `"cool-tones"` - Tonos fríos (verdes, azules)
+  - Color scheme to use:
+    - `"rainbow"` - Various rainbow colors
+    - `"blue-tones"` - Different shades of blue
+    - `"warm-tones"` - Warm tones (oranges, yellows)
+    - `"cool-tones"` - Cool tones (greens, blues)
+    - `"monochrome"` - Grayscale
 
-    - `"monochrome"` - Escala de grises
+## Color Schemes
 
-## Esquemas de colores
+### Rainbow
+Vibrant and varied colors for a striking visual effect.
 
-### Rainbow (Arcoíris)
-Colores vibrantes y variados que crean un efecto visual llamativo.
-### Warm Tones (Tonos Cálidos)
-Colores cálidos como naranjas, amarillos y rojos suaves.
+### Warm Tones
+Warm colors like oranges, yellows, and soft reds.
 
-### Cool Tones (Tonos Fríos)
-Colores fríos como verdes y azules en diferentes intensidades.
+### Cool Tones
+Cool colors like greens and blues in different intensities.
 
-### Monochrome (Monocromático)
-Escala de grises para un look más sutil y profesional.
+### Monochrome
+Grayscale for a more subtle and professional look.
 
-## Cómo funciona
+## How it works
 
-La extensión utiliza el sistema de personalización de colores de VS Code (`workbench.colorCustomizations`) para aplicar colores a diferentes elementos del explorador de archivos:
+The extension uses VS Code's color customization system (`workbench.colorCustomizations`) to apply colors to different elements of the file explorer:
 
-- Fondo de selección inactiva
-- Fondo al pasar el mouse
-- Guías de indentación del árbol
-- Fondo de selección activa
-- Fondo de enfoque
+- Inactive selection background
+- Mouse hover background
+- Tree indent guide lines
+- Active selection background
+- Focus background
 
-## Desarrollo
+## Development
 
-### Estructura del proyecto
+### Project structure
 
 ```
 folder-tree-colors/
 ├── src/
-│   └── extension.ts      # Código principal de la extensión
-├── package.json          # Manifiesto de la extensión
-├── tsconfig.json         # Configuración de TypeScript
-└── README.md            # Este archivo
+│   └── extension.ts      # Main extension code
+├── package.json          # Extension manifest
+├── tsconfig.json         # TypeScript configuration
+└── README.md             # This file
 ```
 
-### Scripts disponibles
+### Available scripts
 
-- `npm run compile` - Compila el código TypeScript
-- `npm run watch` - Compila en modo watch para desarrollo
+- `npm run compile` - Compiles TypeScript code
+- `npm run watch` - Compiles in watch mode for development
 
-## Contribuir
+## Contributing
 
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-caracteristica`)
-3. Commit tus cambios (`git commit -am 'Añade nueva característica'`)
-4. Push a la rama (`git push origin feature/nueva-caracteristica`)
-5. Crea un Pull Request
+1. Fork the repository
+2. Create a branch for your feature (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
 
-## Licencia
+## License
 
-MIT License - ve el archivo LICENSE para más detalles.
+MIT License - see the LICENSE file for details.
 
 ## Changelog
 
 ### 1.0.0
-- Lanzamiento inicial
-- Soporte para múltiples esquemas de colores
-- Configuración personalizable
-- Comandos de toggle y refresh
+- Initial release
+- Support for multiple color schemes
+- Customizable settings
+- Toggle and refresh commands

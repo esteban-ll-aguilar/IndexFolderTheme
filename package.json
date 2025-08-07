@@ -1,0 +1,153 @@
+{
+  "name": "folder-tree-colors",
+  "displayName": "Folder Tree Colors",
+  "description": "Adds visual colors to folder levels in the VS Code explorer, similar to Indent Rainbow",
+  "version": "1.0.0",
+  "publisher": "tu-nombre",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Themes"
+  ],
+  "keywords": [
+    "folder",
+    "tree",
+    "colors",
+    "indent",
+    "explorer",
+    "visual"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "folderTreeColors.toggle",
+        "title": "Toggle Folder Tree Colors",
+        "category": "Folder Tree Colors"
+      },
+      {
+        "command": "folderTreeColors.refreshColors",
+        "title": "Refresh Folder Colors",
+        "category": "Folder Tree Colors"
+      }
+    ],
+    "configuration": {
+      "title": "Folder Tree Colors",
+      "properties": {
+        "folderTreeColors.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Habilitar/deshabilitar los colores de carpetas"
+        },
+        "folderTreeColors.opacity": {
+          "type": "number",
+          "default": 0.8,
+          "minimum": 0.1,
+          "maximum": 1.0,
+          "description": "Intensidad de los colores de las líneas de indentación (0.1 - 1.0)"
+        },
+        "folderTreeColors.colorScheme": {
+          "type": "string",
+          "enum": [
+            "rainbow",
+            "blue-tones",
+            "warm-tones",
+            "cool-tones",
+            "monochrome"
+          ],
+          "default": "rainbow",
+          "description": "Esquema de colores para los niveles de carpetas"
+        }
+      }
+    },
+    "colors": [
+      {
+        "id": "folderTreeColors.level1",
+        "description": "Color para el nivel 1 de carpetas",
+        "defaults": {
+          "dark": "#4ecdc4",
+          "light": "#4ecdc4"
+        }
+      },
+      {
+        "id": "folderTreeColors.level2",
+        "description": "Color para el nivel 2 de carpetas",
+        "defaults": {
+          "dark": "#45b7d1",
+          "light": "#45b7d1"
+        }
+      },
+      {
+        "id": "folderTreeColors.level3",
+        "description": "Color para el nivel 3 de carpetas",
+        "defaults": {
+          "dark": "#96ceb4",
+          "light": "#96ceb4"
+        }
+      },
+      {
+        "id": "folderTreeColors.level4",
+        "description": "Color para el nivel 4 de carpetas",
+        "defaults": {
+          "dark": "#ffeaa7",
+          "light": "#ffeaa7"
+        }
+      },
+      {
+        "id": "folderTreeColors.level5",
+        "description": "Color para el nivel 5 de carpetas",
+        "defaults": {
+          "dark": "#dda0dd",
+          "light": "#dda0dd"
+        }
+      },
+      {
+        "id": "folderTreeColors.level6",
+        "description": "Color para el nivel 6 de carpetas",
+        "defaults": {
+          "dark": "#98d8c8",
+          "light": "#98d8c8"
+        }
+      },
+      {
+        "id": "folderTreeColors.level7",
+        "description": "Color para el nivel 7 de carpetas",
+        "defaults": {
+          "dark": "#f7dc6f",
+          "light": "#f7dc6f"
+        }
+      },
+      {
+        "id": "folderTreeColors.level8",
+        "description": "Color para el nivel 8 de carpetas",
+        "defaults": {
+          "dark": "#bb8fce",
+          "light": "#bb8fce"
+        }
+      },
+      {
+        "id": "folderTreeColors.level9",
+        "description": "Color para el nivel 9 de carpetas",
+        "defaults": {
+          "dark": "#85c1e9",
+          "light": "#85c1e9"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  }
+}
